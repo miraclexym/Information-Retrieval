@@ -91,5 +91,6 @@ if __name__ == "__main__":
     inverted_index, doc_tfs, idf = build_inverted_index(docs)
     
     # 保存倒排索引
+    print("开始保存倒排索引...")
     save_index(inverted_index, doc_tfs, idf)
     print("倒排索引构建并保存完成")

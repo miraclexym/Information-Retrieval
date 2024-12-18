@@ -77,7 +77,7 @@ def main():
     output_csv = './HtmlFile_index.csv'  # 输出索引CSV文件路径
     
     file_data = read_csv(input_csv)  # 读取原始HTML文件名和URL数据
-    build_index_and_write_to_csv(file_data, output_csv)  # 构建索引并写入CSV文件
+    build_index_and_write_to_csv(file_data, output_csv)  # 构建索引并且写入CSV文件
 
 if __name__ == "__main__":
     main()
