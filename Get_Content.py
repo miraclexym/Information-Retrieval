@@ -4,9 +4,9 @@ import re
 from bs4 import BeautifulSoup
 
 # 假设html文件夹路径
-html_folder_path = './HtmlFile'
+html_folder_path = './Html_File'
 
-# 读取HtmlFile.csv并获取html文件名称和URL
+# 读取Html_File.csv并获取html文件名称和URL
 def read_csv(csv_file):
     with open(csv_file, mode='r', encoding='utf-8') as file:
         reader = csv.reader(file)
@@ -48,8 +48,8 @@ def format_text(text):
     text = text.strip()  # 去掉文本开头和结尾的空白字符
     return text
 
-# 构建索引并写入到新的CSV文件
-def build_index_and_write_to_csv(file_data, output_csv_file):
+# 输出网页内容并写入到新的CSV文件
+def get_content_and_write_to_csv(file_data, output_csv_file):
     # 创建并打开CSV文件进行写入
     with open(output_csv_file, mode='w', encoding='utf-8', newline='') as csvfile:
         fieldnames = ['title', 'url', 'anchors', 'body']
@@ -73,11 +73,11 @@ def build_index_and_write_to_csv(file_data, output_csv_file):
 
 # 主函数
 def main():
-    input_csv = './HtmlFile.csv'  # 输入CSV文件路径
-    output_csv = './HtmlFile_index.csv'  # 输出索引CSV文件路径
+    input_csv = './Html_File.csv'  # 输入网页文件CSV文件路径
+    output_csv = './Html_Content.csv'  # 输出网页内容CSV文件路径
     
     file_data = read_csv(input_csv)  # 读取原始HTML文件名和URL数据
-    build_index_and_write_to_csv(file_data, output_csv)  # 构建索引并且写入CSV文件
+    get_content_and_write_to_csv(file_data, output_csv)  # 输出网页内容并且写入CSV文件
 
 if __name__ == "__main__":
     main()

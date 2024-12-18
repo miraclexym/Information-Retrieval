@@ -65,14 +65,14 @@ def build_inverted_index(documents):
     return inverted_index, doc_tfs, idf
 
 # 保存倒排索引到文件
-def save_index(inverted_index, doc_tfs, idf, filename="index.pkl"):
+def save_index(inverted_index, doc_tfs, idf, filename="Text_Index.pkl"):
     with open(filename, 'wb') as f:
         pickle.dump((inverted_index, doc_tfs, idf), f)
 
 if __name__ == "__main__":
     # 读取数据
     print("开始读取 CSV 文件...")
-    documents = read_csv('HtmlContent.csv')
+    documents = read_csv('Html_Content.csv')
     print(f"已读取 {len(documents)} 行数据。")
     
     # 提取每个文档的文本内容（使用anchors和body）

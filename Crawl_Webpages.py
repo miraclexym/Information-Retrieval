@@ -39,7 +39,7 @@ if not os.path.exists(SAVE_DIR):
 # 存储爬虫状态的文件路径
 STATE_FILE = "crawling_state.pkl"
 # 存储网页内容的 CSV 文件路径
-CSV_FILE = "HtmlFile.csv"
+CSV_FILE = "Html_File.csv"
 
 def fetch_page(url):
     try:
